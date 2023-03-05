@@ -2,8 +2,10 @@ from aws_cdk import (
     Stack,
     aws_codepipeline,
 )
+import aws_cdk as cdk
 from constructs import Construct
-from aws_cdk.pipelines import CodePipeline, CodePipelineSource, ShellStep
+from aws_cdk.pipelines import CodePipeline, CodePipelineSource, ShellStep, ManualApprovalStep
+from democdkpipe.democdkpipe.democdkpipe_stage import PipelineAppStage
 
 
 class DemocdkpipeStack(Stack):
@@ -12,7 +14,7 @@ class DemocdkpipeStack(Stack):
         super().__init__(scope, construct_id, **kwargs)
 
         # Create the Pipeline
-        # Create Access Key in Githut
+        # Create Access Key in Github
         # Store the access key in Secrets Manager under the name github-token
         # Store the token in plain text with no key or quotes
         demo_cicd_pipe = CodePipeline(self, "demo_cicd_pipe",
@@ -27,3 +29,16 @@ class DemocdkpipeStack(Stack):
                                                       ]
                                                       )
                                       )
+
+        test_stage = demo_cicd_pipe.add_stage(PipelineAppStage(self,
+                                                               "TEST",
+                                                               env=cdk.Environment(account="684119280118",
+                                                                                   region="us-east-1")
+                                                               ))
+        test_stage.add_post(ManualApprovalStep("Approval"))
+
+        prod_stage = demo_cicd_pipe.add_stage(PipelineAppStage(self,
+                                                               "PROD",
+                                                               env=cdk.Environment(account="684119280118",
+                                                                                   region="us-east-1")
+                                                               ))
