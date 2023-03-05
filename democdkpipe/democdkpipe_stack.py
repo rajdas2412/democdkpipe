@@ -4,7 +4,7 @@ from aws_cdk import (
 import aws_cdk as cdk
 from constructs import Construct
 from aws_cdk.pipelines import CodePipeline, CodePipelineSource, ShellStep, ManualApprovalStep
-from democdkpipe_stage import PipelineAppStage
+from democdkpipe.democdkpipe.democdkpipe_stage import PipelineAppStage
 
 
 class DemocdkpipeStack(Stack):
