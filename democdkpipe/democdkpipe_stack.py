@@ -10,10 +10,10 @@ from democdkpipe_stage import PipelineAppStage
 class DemocdkpipeStack(Stack):
 
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
-        super().__init__(scope, construct_id, **kwargs)
+        super().__init__(self, scope, construct_id, **kwargs)
 
         # Create the Pipeline
-        # Create Access Key in Github
+        # Create Access Key in GitHub
         # Store the access key in Secrets Manager under the name github-token
         # Store the token in plain text with no key or quotes
         demo_cicd_pipe = CodePipeline(self, "demo_cicd_pipe",
