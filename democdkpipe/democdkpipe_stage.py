@@ -3,7 +3,7 @@ from aws_cdk import (
 )
 from constructs import Construct
 
-from lambda_stack import LambdaStack
+from democdkpipe.lambda_stack import LambdaStack
 
 
 class PipelineAppStage(Stage):
