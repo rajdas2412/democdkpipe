@@ -15,5 +15,5 @@ class LambdaStack(Stack):
                                           id="hello_function",
                                           runtime=_lambda.Runtime.PYTHON_3_9,
                                           handler="lambda_handler.lambda_handler",
-                                          code=_lambda.Code.from_asset("../services/")
+                                          code=_lambda.Code.from_asset("../../services/")
                                           )
