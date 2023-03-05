@@ -1,5 +1,4 @@
 from aws_cdk import (
-    Stack,
     Stage,
 )
 from constructs import Construct

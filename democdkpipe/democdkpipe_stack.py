@@ -1,6 +1,5 @@
 from aws_cdk import (
     Stack,
-    aws_codepipeline,
 )
 import aws_cdk as cdk
 from constructs import Construct
@@ -30,15 +29,15 @@ class DemocdkpipeStack(Stack):
                                                       )
                                       )
 
-        test_stage = demo_cicd_pipe.add_stage(PipelineAppStage(self,
-                                                               "TEST",
-                                                               env=cdk.Environment(account="684119280118",
-                                                                                   region="us-east-1")
-                                                               ))
-        test_stage.add_post(ManualApprovalStep("Approval"))
-
-        prod_stage = demo_cicd_pipe.add_stage(PipelineAppStage(self,
-                                                               "PROD",
-                                                               env=cdk.Environment(account="684119280118",
-                                                                                   region="us-east-1")
-                                                               ))
+        # test_stage = demo_cicd_pipe.add_stage(PipelineAppStage(self,
+        #                                                        "TEST",
+        #                                                        env=cdk.Environment(account="684119280118",
+        #                                                                            region="us-east-1")
+        #                                                        ))
+        # test_stage.add_post(ManualApprovalStep("Approval"))
+        #
+        # prod_stage = demo_cicd_pipe.add_stage(PipelineAppStage(self,
+        #                                                        "PROD",
+        #                                                        env=cdk.Environment(account="684119280118",
+        #                                                                            region="us-east-1")
+        #                                                        ))
