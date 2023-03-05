@@ -12,4 +12,4 @@ class PipelineAppStage(Stage):
         super().__init__(scope, construct_id, **kwargs)
 
         # Underscores are not allowed in ID.
-        demo_lambda_stack = LambdaStack(self, "demo-lambda-stack")
+        demo_lambda_stack = LambdaStack(self, "lambdastack")
