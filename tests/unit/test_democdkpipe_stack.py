@@ -4,7 +4,7 @@ import aws_cdk.assertions as assertions
 from democdkpipe.democdkpipe_stack import DemocdkpipeStack
 
 # example tests. To run these tests, uncomment this file along with the example
-# resource in democdkpipe/democdkpipe-stack.py
+# resource in democdkpipe/democdkpipe_stack.py
 def test_sqs_queue_created():
     app = core.App()
     stack = DemocdkpipeStack(app, "democdkpipe")
