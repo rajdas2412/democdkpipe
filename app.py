@@ -7,7 +7,7 @@ from democdkpipe.democdkpipe_stack import DemocdkpipeStack
 
 app = cdk.App()
 DemocdkpipeStack(app, "DemocdkpipeStack",
-                 env=cdk.Environment(account=os.getenv('CDK_DEFAULT_ACCOUNT'), region=os.getenv('CDK_DEFAULT_REGION')),
+                 env=cdk.Environment(account="684119280118", region="us-east-1"),
 
                  )
 
