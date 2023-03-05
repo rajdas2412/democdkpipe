@@ -10,7 +10,7 @@ from democdkpipe.democdkpipe_stage import PipelineAppStage
 class DemocdkpipeStack(Stack):
 
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
-        super().__init__(self, scope, construct_id, **kwargs)
+        super().__init__(scope, construct_id, **kwargs)
 
         # Create the Pipeline
         # Create Access Key in GitHub
